@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Minimalista</title>
+    
+    <!-- Fonte Google: JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Folha de Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="calculator">
+        <!-- Visor da Calculadora -->
+        <div class="display" id="display">0</div>
+
+        <!-- Grade de Botões -->
+        <div class="buttons">
+            <!-- Linha 1 -->
+            <button class="btn btn-top" data-action="clear">C</button>
+            <button class="btn btn-top" data-action="toggle-sign">±</button>
+            <button class="btn btn-top" data-action="percent">%</button>
+            <button class="btn btn-operator" data-action="divide">&divide;</button>
+
+            <!-- Linha 2 -->
+            <button class="btn btn-number">7</button>
+            <button class="btn btn-number">8</button>
+            <button class="btn btn-number">9</button>
+            <button class="btn btn-operator" data-action="multiply">&times;</button>
+
+            <!-- Linha 3 -->
+            <button class="btn btn-number">4</button>
+            <button class="btn btn-number">5</button>
+            <button class="btn btn-number">6</button>
+            <button class="btn btn-operator" data-action="subtract">-</button>
+
+            <!-- Linha 4 -->
+            <button class="btn btn-number">1</button>
+            <button class="btn btn-number">2</button>
+            <button class="btn btn-number">3</button>
+            <button class="btn btn-operator" data-action="add">+</button>
+
+            <!-- Linha 5 -->
+            <button class="btn btn-number btn-zero">0</button>
+            <button class="btn btn-number" data-action="decimal">,</button>
+            <button class="btn btn-operator" data-action="calculate">=</button>
+        </div>
+    </main>
+
+</body>
+</html>

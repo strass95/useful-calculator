@@ -1,0 +1,108 @@
+/* Reset Básico e Tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Fundo da Página (Branco conforme solicitado) */
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Principal da Calculadora */
+.calculator {
+    width: 320px;
+    background-color: #383838;
+    border-radius: 18px;
+    overflow: hidden;
+    /* Destaque com gradiente sutil de sombra e elevação moderna */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.12),
+        0 8px 16px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Visor / Display */
+.display {
+    width: 100%;
+    height: 95px;
+    background-color: #383838;
+    color: #ffffff;
+    font-size: 3.2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 16px 24px;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Grade de Botões */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #2c2c2c; /* Linhas divisórias finas entre os botões */
+}
+
+/* Estilo Base dos Botões */
+.btn {
+    border: none;
+    outline: none;
+    height: 68px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+/* Efeito ao Clicar */
+.btn:active {
+    opacity: 0.8;
+}
+
+/* Botões das Funções Superiores (C, ±, %) */
+.btn-top {
+    background-color: #484848;
+}
+
+.btn-top:hover {
+    background-color: #535353;
+}
+
+/* Botões Numéricos e Vírgula */
+.btn-number {
+    background-color: #5e5e5e;
+}
+
+.btn-number:hover {
+    background-color: #6a6a6a;
+}
+
+/* Botão Zero (Ocupa duas colunas) */
+.btn-zero {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 28px;
+}
+
+/* Botões dos Operadores (Coluna Direita) */
+.btn-operator {
+    background-color: #e09938;
+}
+
+.btn-operator:hover {
+    background-color: #ea9f3a;
+}

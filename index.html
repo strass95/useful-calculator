@@ -3,54 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Minimalista</title>
-    
-    <!-- Fonte Google: JetBrains Mono -->
+    <meta name="theme-color" content="#101214">
+    <title>NEXUS | Calculadora</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Folha de Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="ambient-numbers" id="ambient-numbers" aria-hidden="true"></div>
 
-    <main class="calculator">
-        <!-- Visor da Calculadora -->
-        <div class="display" id="display">0</div>
+    <main class="calculator" aria-label="Calculadora NEXUS">
+        <header class="calculator-header">
+            <p class="brand"><span class="status-light" aria-hidden="true"></span>NEXUS <span class="brand-divider">/</span> CALCULADORA</p>
+            <span class="unit-code">SYS.01</span>
+        </header>
 
-        <!-- Grade de Botões -->
-        <div class="buttons">
-            <!-- Linha 1 -->
-            <button class="btn btn-top" data-action="clear">C</button>
-            <button class="btn btn-top" data-action="toggle-sign">±</button>
-            <button class="btn btn-top" data-action="percent">%</button>
-            <button class="btn btn-operator" data-action="divide">&divide;</button>
+        <section class="display" aria-label="Visor">
+            <div class="display-meta">
+                <span id="display-label">ENTRADA</span>
+                <span id="operation" aria-live="polite"></span>
+            </div>
+            <output class="display-value" id="display" aria-live="polite" aria-atomic="true">0</output>
+        </section>
 
-            <!-- Linha 2 -->
-            <button class="btn btn-number">7</button>
-            <button class="btn btn-number">8</button>
-            <button class="btn btn-number">9</button>
-            <button class="btn btn-operator" data-action="multiply">&times;</button>
-
-            <!-- Linha 3 -->
-            <button class="btn btn-number">4</button>
-            <button class="btn btn-number">5</button>
-            <button class="btn btn-number">6</button>
-            <button class="btn btn-operator" data-action="subtract">-</button>
-
-            <!-- Linha 4 -->
-            <button class="btn btn-number">1</button>
-            <button class="btn btn-number">2</button>
-            <button class="btn btn-number">3</button>
-            <button class="btn btn-operator" data-action="add">+</button>
-
-            <!-- Linha 5 -->
-            <button class="btn btn-number btn-zero">0</button>
-            <button class="btn btn-number" data-action="decimal">,</button>
-            <button class="btn btn-operator" data-action="calculate">=</button>
+        <div class="conversion-row" role="group" aria-label="Converter número decimal">
+            <button class="btn btn-conversion" type="button" data-action="convert-binary" aria-label="Converter para binário">
+                <span>BIN</span><small>BASE 02</small>
+            </button>
+            <button class="btn btn-conversion" type="button" data-action="convert-hex" aria-label="Converter para hexadecimal">
+                <span>HEX</span><small>BASE 16</small>
+            </button>
         </div>
-    </main>
 
+        <div class="buttons" role="group" aria-label="Teclado da calculadora">
+            <button class="btn btn-top" type="button" data-action="clear" aria-label="Limpar">C</button>
+            <button class="btn btn-top" type="button" data-action="toggle-sign" aria-label="Inverter sinal">±</button>
+            <button class="btn btn-top" type="button" data-action="percent" aria-label="Porcentagem">%</button>
+            <button class="btn btn-operator" type="button" data-action="divide" aria-label="Dividir">÷</button>
+
+            <button class="btn btn-number" type="button" data-number="7">7</button>
+            <button class="btn btn-number" type="button" data-number="8">8</button>
+            <button class="btn btn-number" type="button" data-number="9">9</button>
+            <button class="btn btn-operator" type="button" data-action="multiply" aria-label="Multiplicar">×</button>
+
+            <button class="btn btn-number" type="button" data-number="4">4</button>
+            <button class="btn btn-number" type="button" data-number="5">5</button>
+            <button class="btn btn-number" type="button" data-number="6">6</button>
+            <button class="btn btn-operator" type="button" data-action="subtract" aria-label="Subtrair">−</button>
+
+            <button class="btn btn-number" type="button" data-number="1">1</button>
+            <button class="btn btn-number" type="button" data-number="2">2</button>
+            <button class="btn btn-number" type="button" data-number="3">3</button>
+            <button class="btn btn-operator" type="button" data-action="add" aria-label="Somar">+</button>
+
+            <button class="btn btn-number btn-zero" type="button" data-number="0">0</button>
+            <button class="btn btn-number" type="button" data-action="decimal" aria-label="Separador decimal">,</button>
+            <button class="btn btn-operator" type="button" data-action="calculate" aria-label="Calcular">=</button>
+        </div>
+
+        <footer class="calculator-footer">
+            <span>DECIMAL</span>
+            <span id="footer-status">PRONTA</span>
+        </footer>
+    </main>
 </body>
 </html>
